@@ -1,4 +1,5 @@
 from multiprocessing import Process
+import os
  
 def fibonacci(n):
     fib0 = 0
@@ -13,3 +14,5 @@ if __name__ == "__main__":
     p = Process(target=fibonacci, args = (20,))
     p.start()
     p.join() #fonction de sycnchro Pour que le process Père attende le fils
+    print(os.getpid())
+    print(os.getppid())
