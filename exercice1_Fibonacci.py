@@ -5,12 +5,11 @@ def fibonacci(n):
     fib1 = 1
     for i in range(n):
         fib = fib0 + fib1
-        print("Pour n = ",i, " fib = ", fib)
+        print(" fib",i+2,"= ", fib)
         fib0 = fib1
         fib1 = fib
-        
  
 if __name__ == "__main__":
-    p = Process(target=fibonacci, args = (5,))
+    p = Process(target=fibonacci, args = (20,))
     p.start()
-    p.join()
+    p.join() #fonction de sycnchro Pour que le process Père attende le fils
